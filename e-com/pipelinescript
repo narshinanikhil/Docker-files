@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    stages {
+        stage('code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/narshinanikhil/Docker-files.git'
+            }
+        }
+        stage('image') {
+            steps { 
+                sh 'docker build -t movie e-com/movie'
+                sh  'docker build -t bank e-com/bank'
+                sh  'docker build -t bus e-com/bus'
+                sh  'docker build -t flight e-com/flight'
+            }
+        }
+        stage('container') {
+            steps {
+                sh '''
+                 export DOCKER_BUILDKIT=0
+                 docker-compose -f e-com/compose.yml up -d'''
+            }
+        }
+    }
