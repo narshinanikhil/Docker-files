@@ -1,0 +1,25 @@
+---
+services
+ bank:
+   container-name: bank-cont
+   build: ./bank/
+   ports:
+     - "1111:80"
+ 
+ bus:
+   container-name: bus-cont
+   build: ./bus/
+   ports:
+     - "1112:80"
+
+ flight:
+   container-name: flight-cont
+   build: ./flight/
+   ports:
+     - "1113:80"
+ 
+  movie:
+   container-name: movie-cont
+   build: ./movie/
+   ports:
+     - "1114:80"

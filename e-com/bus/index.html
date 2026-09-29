@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusGo - Bus Booking App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #2563eb, #1e40af);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .search-box {
+            max-width: 900px;
+            margin: -30px auto 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .search-form input,
+        .search-form button {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            flex: 1;
+        }
+
+        .search-form button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .bus-list {
+            margin-top: 20px;
+        }
+
+        .bus-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .bus-details h3 {
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            text-align: right;
+        }
+
+        .price h2 {
+            color: green;
+        }
+
+        .book-btn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 40px;
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🚌 BusGo</h1>
+    <nav>
+        #Home</a>
+        #My Bookings</a>
+        #Offers</a>
+        <aontact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Book Your Bus Tickets Online</h2>
+    <p>Fast, Secure & Convenient Travel Booking</p>
+</section>
+
+<div class="search-box">
+    <form class="search-form">
+        <input type="text" placeholder="From City" required>
+        <input type="text" placeholder="To City" required>
+        <input type="date" required>
+        <button type="submit">Search Buses</button>
+    </form>
+</div>
+
+<div class="container">
+
+    <h2>Available Buses</h2>
+
+    <div class="bus-list">
+
+        <div class="bus-card">
+            <div class="bus-details">
+                <h3>Express Travels</h3>
+                <p>Departure: 08:00 AM</p>
+                <p>Arrival: 02:00 PM</p>
+                <p>Seats Available: 25</p>
+            </div>
+            <div class="price">
+                <h2>$25</h2>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+
+        <div class="bus-card">
+            <div class="bus-details">
+                <h3>City Link Bus</h3>
+                <p>Departure: 10:00 AM</p>
+                <p>Arrival: 05:00 PM</p>
+                <p>Seats Available: 12</p>
+            </div>
+            <div class="price">
+                <h2>$30</h2>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+
+        <div class="bus-card">
+            <div class="bus-details">
+                <h3>Super Deluxe</h3>
+                <p>Departure: 09:30 PM</p>
+                <p>Arrival: 05:30 AM</p>
+                <p>Seats Available: 8</p>
+            </div>
+            <div class="price">
+                <h2>$40</h2>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 BusGo. All Rights Reserved.
+</footer>
+
+</body>
+</html>
