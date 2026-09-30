@@ -5,21 +5,83 @@ services:
     build: ./bank/
     ports:
       - "1111:80"
+    networks:
+      - network1
+    volumes:
+      - volume1:/transactions/
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.5'
+          memory: '200M'
+        limits:
+          cpus: '1.0'
+          memory: '300M'
+
  
   bus:
     container_name: bus-cont
     build: ./bus/
     ports:
       - "1112:80"
+    networks:
+      - network2
+    volumes:
+      - volume2:/tickets/
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.5'
+          memory: '200M'
+        limits:
+          cpus: '1.0'
+          memory: '300M'
 
   flight:
     container_name: flight-cont
     build: ./flight/
     ports:
       - "1113:80"
+    networks:
+      - network3
+    volumes:
+      - volume2:/flight-tickets/
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.5'
+          memory: '200M'
+        limits:
+          cpus: '1.0'
+          memory: '300M'
  
   movie:
     container_name: movie-cont
     build: ./movie/
     ports:
       - "1114:80"
+    networks:
+      - network3
+    volumes:
+      - volume1:/movie-tickets/
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.5'
+          memory: '200M'
+        limits:
+          cpus: '1.0'
+          memory: '300M'
+
+networks:
+  network1:
+    driver: bridge
+  network2:
+    driver: bridge
+  network3:
+    driver: bridge
+volumes:
+  volume1:
+  volume2:
+
+
